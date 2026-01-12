@@ -45,10 +45,10 @@
   "scripts": {
     "build": "vite build",
     "build:lib": "vite build --mode lib && tsc --project tsconfig.lib.json",
-    "build:demo": "vite build && mv dist-demo dist",
+    "build:demo": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "deploy": "npm run build:demo && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d docs",
     "prepublishOnly": "npm run build:lib"
   },
   "dependencies": {

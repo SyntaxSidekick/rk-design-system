@@ -93,7 +93,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      outDir: 'dist-demo',
+      outDir: 'docs',
       emptyOutDir: true,
       sourcemap: true,
     },
