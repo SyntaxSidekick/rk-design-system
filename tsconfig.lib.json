@@ -8,6 +8,6 @@
     "noEmit": false,
     "allowImportingTsExtensions": false
   },
-  "include": ["src"],
-  "exclude": ["src/main.tsx", "src/app/App.tsx", "src/app/components/design-system/**"]
+  "include": ["src/lib/**/*", "src/index.ts", "src/components.ts", "src/hooks.ts", "src/utils.ts"],
+  "exclude": ["src/main.tsx", "src/app/**/*", "**/*.test.ts", "**/*.test.tsx"]
 }

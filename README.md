@@ -2,7 +2,7 @@
 
 A complete, production-ready design system for portfolio and CMS-driven websites. Built with modern web technologies and a focus on accessibility, consistency, and developer experience.
 
-[![npm version](https://img.shields.io/npm/v/@riadkilani/design-system.svg)](https://www.npmjs.com/package/@riadkilani/design-system)
+[![npm version](https://img.shields.io/npm/v/@syntaxsidekick/riadkilani-design-system.svg)](https://www.npmjs.com/package/@syntaxsidekick/riadkilani-design-system)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌐 Live Demo
@@ -26,18 +26,17 @@ Explore all components, design tokens, and usage examples in the interactive doc
 ## � Installation
 
 ```bash
-npm install @riadkilani/design-system
+npm install @syntaxsidekick/riadkilani-design-system
 ```
 
 ### Quick Start (Using in Your Project)
 
 ```typescript
 // Import styles
-import '@riadkilani/design-system/styles';
-import '@riadkilani/design-system/theme';
+import '@syntaxsidekick/riadkilani-design-system/styles';
 
 // Import components
-import { Button, Card, Input } from '@riadkilani/design-system';
+import { Button, Card, Input } from '@syntaxsidekick/riadkilani-design-system';
 
 function App() {
   return (

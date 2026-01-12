@@ -1,0 +1,4 @@
+/* Design System Styles - Import this file in your project */
+@import '../styles/fonts.css';
+@import '../styles/theme.css';
+@import '../styles/tailwind.css';

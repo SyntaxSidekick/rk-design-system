@@ -1,5 +1,5 @@
 {
-  "name": "@riadkilani/design-system",
+  "name": "@syntaxsidekick/riadkilani-design-system",
   "version": "1.0.0",
   "description": "A complete, production-ready design system for portfolio and CMS-driven websites",
   "type": "module",
@@ -12,15 +12,19 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./src/styles/index.css",
-    "./theme": "./src/styles/theme.css",
-    "./fonts": "./src/styles/fonts.css"
+    "./styles": "./dist/styles.css",
+    "./fonts": "./src/assets/fonts/*"
   },
   "files": [
-    "dist",
-    "src/styles",
-    "src/assets",
-    "README.md"
+    "dist/index.mjs",
+    "dist/index.cjs",
+    "dist/index.d.ts",
+    "dist/index.*.map",
+    "dist/styles.css",
+    "dist/lib/**/*.d.ts",
+    "dist/lib/**/*.d.ts.map",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "react",
@@ -44,7 +48,7 @@
   "homepage": "https://syntaxsidekick.github.io/rk-design-system",
   "scripts": {
     "build": "vite build",
-    "build:lib": "vite build --mode lib && tsc --project tsconfig.lib.json",
+    "build:lib": "vite build --mode lib && tsc --project tsconfig.lib.json && node scripts/bundle-css.mjs",
     "build:demo": "vite build",
     "dev": "vite",
     "preview": "vite preview",
@@ -112,6 +116,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
     "gh-pages": "^6.3.0",
+    "glob": "^13.0.0",
     "tailwindcss": "4.1.12",
     "typescript": "^5.9.3",
     "vite": "6.3.5"

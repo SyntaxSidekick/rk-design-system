@@ -1,2 +1,2 @@
 // Utilities
-export { cn } from './app/components/ui/utils';
+export { cn } from './lib/components/utils';
