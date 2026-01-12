@@ -6,16 +6,16 @@ export function SystemOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="mb-4">Design System Overview</h2>
-        <p className="text-muted-foreground text-lg max-w-3xl">
+        <h2 className="mb-4 text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Design System Overview</h2>
+        <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
           A complete, production-ready design system for a personal portfolio and CMS-driven website,
           built with modern web standards and developer experience in mind.
         </p>
       </div>
 
       {/* Key Features */}
-      <Card className="p-6">
-        <h3 className="mb-6">Key Features</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 bg-gradient-to-br from-background to-muted/20">
+        <h3 className="mb-6 text-2xl font-semibold">Key Features</h3>
         <div className="grid gap-4 md:grid-cols-2">
           <Feature
             title="Logo-Based Palette"
@@ -53,8 +53,8 @@ export function SystemOverview() {
       </Card>
 
       {/* Technology Stack */}
-      <Card className="p-6">
-        <h3 className="mb-6">Technology Stack</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 bg-gradient-to-br from-background to-accent/5">
+        <h3 className="mb-6 text-2xl font-semibold">Technology Stack</h3>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <TechStack
             name="React 18"
@@ -90,8 +90,8 @@ export function SystemOverview() {
       </Card>
 
       {/* Design Principles */}
-      <Card className="p-6">
-        <h3 className="mb-4">Design Principles</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+        <h3 className="mb-6 text-2xl font-semibold">Design Principles</h3>
         <div className="space-y-6">
           <Principle
             number="1"
@@ -122,8 +122,8 @@ export function SystemOverview() {
       </Card>
 
       {/* File Structure */}
-      <Card className="p-6">
-        <h3 className="mb-4">File Structure</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 bg-gradient-to-br from-background to-primary/5">
+        <h3 className="mb-6 text-2xl font-semibold">File Structure</h3>
         <div className="space-y-2 font-mono text-sm">
           <FileStructure path="/src/styles/theme.css" description="Design tokens & CSS variables" />
           <FileStructure path="/src/styles/fonts.css" description="Font imports (Trajan Pro + Inter)" />
@@ -133,12 +133,12 @@ export function SystemOverview() {
       </Card>
 
       {/* Usage Example */}
-      <Card className="p-6">
-        <h3 className="mb-4">Quick Start</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 bg-gradient-to-br from-primary/5 to-background">
+        <h3 className="mb-6 text-2xl font-semibold">Quick Start</h3>
         <div className="space-y-4">
           <div>
             <h4 className="mb-2 text-sm font-medium">Using Design Tokens</h4>
-            <div className="rounded-lg bg-muted p-4 font-mono text-sm">
+            <div className="rounded-lg bg-muted/50 p-4 font-mono text-sm border border-border/50">
               <pre className="overflow-x-auto">
 {`.my-component {
   /* Colors */
@@ -169,7 +169,7 @@ export function SystemOverview() {
 
           <div>
             <h4 className="mb-2 text-sm font-medium">Using Components</h4>
-            <div className="rounded-lg bg-muted p-4 font-mono text-sm">
+            <div className="rounded-lg bg-muted/50 p-4 font-mono text-sm border border-border/50">
               <pre className="overflow-x-auto">
 {`import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
@@ -192,8 +192,8 @@ function MyPage() {
       </Card>
 
       {/* Best Practices */}
-      <Card className="p-6">
-        <h3 className="mb-4">Best Practices</h3>
+      <Card className="p-6 md:p-8 border-2 hover:border-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+        <h3 className="mb-6 text-2xl font-semibold">Best Practices</h3>
         <div className="space-y-4 text-sm">
           <div>
             <h4 className="font-medium mb-2">✓ Do</h4>
@@ -240,11 +240,11 @@ function MyPage() {
 
 function Feature({ title, description }: { title: string; description: string }) {
   return (
-    <div className="flex gap-3">
-      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+    <div className="flex gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors duration-200 group">
+      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
       <div>
-        <p className="font-medium mb-1">{title}</p>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="font-medium mb-1 group-hover:text-primary transition-colors">{title}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -260,12 +260,12 @@ function TechStack({
   badge: string;
 }) {
   return (
-    <div>
+    <div className="p-4 rounded-lg border border-border/50 hover:border-accent/50 bg-gradient-to-br from-background to-muted/10 hover:shadow-md transition-all duration-200 group">
       <div className="mb-2 flex items-center gap-2">
-        <h4 className="font-medium">{name}</h4>
-        <Badge variant="secondary" className="text-xs">{badge}</Badge>
+        <h4 className="font-medium group-hover:text-accent transition-colors">{name}</h4>
+        <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">{badge}</Badge>
       </div>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -280,13 +280,13 @@ function Principle({
   description: string;
 }) {
   return (
-    <div className="flex gap-4">
-      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 font-bold text-primary">
+    <div className="flex gap-4 group">
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 font-bold text-primary-foreground shadow-lg shadow-primary/20 ring-2 ring-primary/10 group-hover:scale-110 transition-transform duration-200">
         {number}
       </div>
       <div>
-        <h4 className="font-medium mb-1">{title}</h4>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <h4 className="font-medium mb-1 group-hover:text-primary transition-colors">{title}</h4>
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -294,8 +294,8 @@ function Principle({
 
 function FileStructure({ path, description }: { path: string; description: string }) {
   return (
-    <div className="flex items-center justify-between rounded border border-border bg-muted/30 p-2">
-      <code className="text-xs text-primary">{path}</code>
+    <div className="flex items-center justify-between rounded-lg border border-border/50 bg-muted/30 p-3 hover:bg-muted/50 hover:border-primary/30 transition-all duration-200 group">
+      <code className="text-xs text-primary font-medium group-hover:text-accent transition-colors">{path}</code>
       <span className="text-xs text-muted-foreground">{description}</span>
     </div>
   );
