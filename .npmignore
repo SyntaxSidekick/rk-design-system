@@ -1,0 +1,37 @@
+# Source files (we publish dist/)
+src/main.tsx
+src/app/App.tsx
+src/app/components/design-system/
+src/app/components/figma/
+
+# Build and dev files
+node_modules/
+.vscode/
+.git/
+.gitignore
+
+# Config files
+vite.config.ts
+tsconfig.json
+tsconfig.lib.json
+postcss.config.mjs
+
+# Documentation (keep README, INSTALL, LICENSE)
+guidelines/
+ATTRIBUTIONS.md
+README-DESIGN-SYSTEM.md
+
+# Development files
+index.html
+.env
+.env.local
+
+# Testing and CI
+*.test.*
+*.spec.*
+__tests__/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
