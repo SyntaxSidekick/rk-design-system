@@ -41,7 +41,7 @@ docs/                 Built demo (GitHub Pages)
 
 ### 🎯 What Each Build Does
 
-#### Library Build (`npm run build:lib`)
+#### Library Build (`npm run build:lib `)
 ```bash
 Creates:
   dist/index.mjs         # ES module for modern bundlers
