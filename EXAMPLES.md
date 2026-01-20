@@ -5,8 +5,8 @@ This directory contains examples of how to use the Riad Kilani Design System in 
 ## Basic Example
 
 ```typescript
-import { Button, Card, CardContent, CardHeader, CardTitle } from '@riadkilani/design-system';
-import '@riadkilani/design-system/styles';
+import { Button, Card, CardContent, CardHeader, CardTitle } from '@syntaxsidekick/riadkilani-design-system';
+import '@syntaxsidekick/riadkilani-design-system/styles';
 
 function App() {
   return (
@@ -42,7 +42,7 @@ import {
   FormMessage,
   Input,
   Textarea,
-} from '@riadkilani/design-system';
+} from '@syntaxsidekick/riadkilani-design-system';
 import { useForm } from 'react-hook-form';
 
 function ContactForm() {

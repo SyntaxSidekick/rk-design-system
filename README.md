@@ -198,28 +198,167 @@ Navigate between sections using the header navigation. Sections persist across p
 ### Extending the Theme
 
 1. Add tokens to `src/styles/theme.css`
-2. Use CSS custom properties for values
-3. Maintain consistency with existing system
-4. Test in both light and dark modes
+# Riad Kilani Design System
 
-## � Publishing to npm
+A production-ready React design system for portfolio and CMS-driven sites. Accessible, consistent, and easy to integrate into any React app.
+
+[![npm version](https://img.shields.io/npm/v/@syntaxsidekick/riadkilani-design-system.svg)](https://www.npmjs.com/package/@syntaxsidekick/riadkilani-design-system)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Live Demo
+
+https://syntaxsidekick.github.io/rk-design-system
+
+## Features
+
+- Accessible, Radix-powered components (40+), fully typed
+- Prebuilt CSS bundle (no Tailwind required to consume)
+- Dark mode tokens and motion system
+- Tree-shakeable ESM + CJS with TypeScript types
+- Works with Vite, Next.js (App/Pages), CRA
+
+## Install
 
 ```bash
-# Build the library
-npm run build:lib
+npm install @syntaxsidekick/riadkilani-design-system
+```
 
-# Publish to npm (requires npm account)
+Peer deps:
+
+```bash
+npm install react react-dom
+```
+
+## Quick Start
+
+1) Import styles once at your app entry
+
+```ts
+// Vite/CRA: src/main.tsx or src/index.tsx
+import '@syntaxsidekick/riadkilani-design-system/styles';
+```
+
+```ts
+// Next.js (App Router): app/layout.tsx
+import '@syntaxsidekick/riadkilani-design-system/styles';
+```
+
+2) Use components
+
+```tsx
+import { Button, Card, Input } from '@syntaxsidekick/riadkilani-design-system';
+
+export default function Example() {
+  return (
+    <Card className="max-w-sm p-6 space-y-4">
+      <Input placeholder="Email" />
+      <Button>Submit</Button>
+    </Card>
+  );
+}
+```
+
+Tailwind optional: If your app also uses Tailwind, keep your own config. Optionally include the DS dist path so Tailwind scans DS files for classnames (not required to use the DS):
+
+```js
+// tailwind.config.js (optional)
+export default {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@syntaxsidekick/riadkilani-design-system/dist/**/*.{js,mjs}',
+  ],
+  theme: { extend: {} },
+  plugins: [],
+}
+```
+
+## Theming & Dark Mode
+
+Design tokens are provided via CSS custom properties and shipped in the CSS bundle. Override in your app as needed:
+
+```css
+:root {
+  /* example overrides */
+  --primary: 217 91% 60%;
+}
+.dark {
+  --primary: 217 91% 60%;
+}
+```
+
+Quick toggle example:
+
+```tsx
+import { useState } from 'react';
+import { Button } from '@syntaxsidekick/riadkilani-design-system';
+
+export function ThemeToggle() {
+  const [isDark, setIsDark] = useState(false);
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => {
+        setIsDark((v) => !v);
+        document.documentElement.classList.toggle('dark');
+      }}
+    >
+      {isDark ? '☀️' : '🌙'}
+    </Button>
+  );
+}
+```
+
+## API Surface
+
+- Components: buttons, inputs, dialogs, sheets, dropdowns, tabs, tables, cards, alerts, tooltips, accordions, carousels, calendars, charts, and more.
+- Utilities: `cn()`.
+- Hooks: `useIsMobile()`.
+
+See full exports in [src/components.ts](src/components.ts), [src/utils.ts](src/utils.ts), and [src/hooks.ts](src/hooks.ts). For more examples, see [EXAMPLES.md](EXAMPLES.md).
+
+## Troubleshooting
+
+- Styles not applying: Ensure you imported `@syntaxsidekick/riadkilani-design-system/styles` once at the root.
+- Peer dependency warnings: The DS supports React >=18 <20. Install matching `react` and `react-dom` versions in your app.
+- Using Tailwind: Not required. If you use it, the DS CSS is already compiled. The optional `content` include above helps for advanced class scanning.
+
+## Development (this repo)
+
+```bash
+npm install
+npm run dev        # demo site
+npm run build      # demo build → docs/
+npm run build:lib  # library build → dist/
+npm run preview
+```
+
+Docs: [INSTALL.md](INSTALL.md), [INTEGRATION.md](INTEGRATION.md)
+
+## Build & Publish
+
+```bash
+npm run build:lib
 npm publish --access public
 ```
 
-## �📄 License
+For local testing in another project:
 
-Copyright © 2026 Riad Kilani. All rights reserved.
+```bash
+# in this repo
+npm run build:lib && npm link
 
-## 🤝 Contributing
+# in your other project
+npm link @syntaxsidekick/riadkilani-design-system
+```
 
-This is a personal design system. For questions or suggestions, please open an issue.
+## Tech Stack
 
----
+- React + TypeScript, Vite
+- Radix UI underpinnings + shadcn-inspired patterns
+- Tailwind v4 for authoring (precompiled for consumers)
+- Motion (Framer-like API) and Lucide icons
 
-Built with ❤️ by Riad Kilani
+## License
+
+MIT © 2026 Riad Kilani

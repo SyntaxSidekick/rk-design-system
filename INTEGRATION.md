@@ -245,7 +245,7 @@ The demo site (`src/app/`, `docs/`) is **NOT** published to npm.
 - Points to `src/app/components/ui/index.ts`
 - Which re-exports from `src/lib/components/button.tsx`
 
-**In consuming projects:** `import { Button } from '@riadkilani/design-system'`
+**In consuming projects:** `import { Button } from '@syntaxsidekick/riadkilani-design-system'`
 - Points to `dist/index.mjs` (or `.cjs`)
 - Which exports from compiled library code
 

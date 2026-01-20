@@ -3,7 +3,7 @@
 ## Quick Install
 
 ```bash
-npm install @riadkilani/design-system
+npm install @syntaxsidekick/riadkilani-design-system
 ```
 
 ## Setup
@@ -13,22 +13,14 @@ npm install @riadkilani/design-system
 Add the design system styles to your main CSS/SCSS file or entry point:
 
 ```css
-/* Import base styles */
-@import '@riadkilani/design-system/styles';
-
-/* Optional: Import theme variables */
-@import '@riadkilani/design-system/theme';
-
-/* Optional: Import fonts */
-@import '@riadkilani/design-system/fonts';
+/* Import the prebuilt design system CSS */
+@import '@syntaxsidekick/riadkilani-design-system/styles';
 ```
 
 Or in your JavaScript/TypeScript entry file:
 
 ```typescript
-import '@riadkilani/design-system/styles';
-import '@riadkilani/design-system/theme';
-import '@riadkilani/design-system/fonts';
+import '@syntaxsidekick/riadkilani-design-system/styles';
 ```
 
 ### 2. Configure Tailwind CSS
@@ -36,17 +28,16 @@ import '@riadkilani/design-system/fonts';
 If you're using Tailwind CSS, extend your `tailwind.config.js`:
 
 ```javascript
+// Only needed if you also use Tailwind in your app
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@riadkilani/design-system/dist/**/*.{js,mjs}",
+    // Include DS only if you want Tailwind to scan its JS for classnames
+    "./node_modules/@syntaxsidekick/riadkilani-design-system/dist/**/*.{js,mjs}",
   ],
   theme: {
-    extend: {
-      // The design system uses CSS variables for theming
-      // These are automatically available when you import the theme
-    },
+    extend: {},
   },
   plugins: [],
 }
@@ -70,7 +61,7 @@ If using TypeScript, ensure your `tsconfig.json` includes:
 ### Import Components
 
 ```typescript
-import { Button, Card, Input } from '@riadkilani/design-system';
+import { Button, Card, Input } from '@syntaxsidekick/riadkilani-design-system';
 
 function MyComponent() {
   return (
@@ -85,7 +76,7 @@ function MyComponent() {
 ### Import Utilities
 
 ```typescript
-import { cn } from '@riadkilani/design-system';
+import { cn } from '@syntaxsidekick/riadkilani-design-system';
 
 // Merge class names with Tailwind
 const className = cn('base-class', condition && 'conditional-class');
@@ -94,7 +85,7 @@ const className = cn('base-class', condition && 'conditional-class');
 ### Import Hooks
 
 ```typescript
-import { useIsMobile } from '@riadkilani/design-system';
+import { useIsMobile } from '@syntaxsidekick/riadkilani-design-system';
 
 function ResponsiveComponent() {
   const isMobile = useIsMobile();
@@ -138,11 +129,7 @@ The design system uses three font families:
 - **Inter** - Body/UI text
 - **JetBrains Mono** - Code/Monospace
 
-These fonts are included in the package. To use them, import the fonts CSS:
-
-```typescript
-import '@riadkilani/design-system/fonts';
-```
+Fonts are loaded from reputable CDNs via the built-in CSS. No extra setup required.
 
 ## Dark Mode
 

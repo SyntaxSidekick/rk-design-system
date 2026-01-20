@@ -2,3 +2,29 @@ node_modules
 dist
 .env
 .env.local
+
+# Logs and debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Build caches
+.cache/
+.turbo/
+.eslintcache
+.tsbuildinfo
+
+# Local coverage/tests
+coverage/
+__tests__/
+*.test.*
+*.spec.*

@@ -10,7 +10,7 @@ The Riad Kilani Design System has been successfully configured for npm publicati
 
 ### 1. Package Configuration
 - ✅ Updated `package.json` with proper npm metadata
-- ✅ Changed package name to `@riadkilani/design-system`
+- ✅ Package name set to `@syntaxsidekick/riadkilani-design-system`
 - ✅ Added proper exports for ESM and CommonJS
 - ✅ Configured peer dependencies
 - ✅ Added keywords and repository information
@@ -42,9 +42,7 @@ dist/
 ```
 
 ### 6. Exported Styles
-- `@riadkilani/design-system/styles` → Complete styles
-- `@riadkilani/design-system/theme` → Theme variables
-- `@riadkilani/design-system/fonts` → Font definitions
+- `@syntaxsidekick/riadkilani-design-system/styles` → Prebuilt CSS bundle
 
 ### 7. Documentation
 - ✅ Updated README.md with installation instructions
@@ -80,7 +78,7 @@ npm run build:lib
 # Test in another project (link locally)
 npm link
 # Then in another project:
-npm link @riadkilani/design-system
+npm link @syntaxsidekick/riadkilani-design-system
 ```
 
 ### 2. Publish to npm
@@ -113,12 +111,12 @@ npm publish --access public
 After publishing, users can install and use it:
 
 ```bash
-npm install @riadkilani/design-system
+npm install @syntaxsidekick/riadkilani-design-system
 ```
 
 ```typescript
-import { Button, Card, Input } from '@riadkilani/design-system';
-import '@riadkilani/design-system/styles';
+import { Button, Card, Input } from '@syntaxsidekick/riadkilani-design-system';
+import '@syntaxsidekick/riadkilani-design-system/styles';
 
 function App() {
   return (
@@ -221,7 +219,7 @@ npm run preview
 - **Manual deploy:** `npm run deploy`
 
 ### NPM (Package)
-- **Package:** `@riadkilani/design-system`
+- **Package:** `@syntaxsidekick/riadkilani-design-system`
 - **Build folder:** `dist/`
 - **Command:** `npm publish --access public`
 
@@ -242,6 +240,6 @@ When adding new components:
 ---
 
 **Status:** ✅ Ready for npm publication and GitHub Pages deployment
-**Package Name:** `@riadkilani/design-system`
+**Package Name:** `@syntaxsidekick/riadkilani-design-system`
 **Current Version:** `1.0.0`
 **Demo URL:** https://syntaxsidekick.github.io/rk-design-system
