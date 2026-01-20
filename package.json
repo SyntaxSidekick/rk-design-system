@@ -1,6 +1,6 @@
 {
   "name": "@syntaxsidekick/riadkilani-design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A complete, production-ready design system for portfolio and CMS-driven websites",
   "type": "module",
   "main": "./dist/index.cjs",
