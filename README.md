@@ -258,6 +258,52 @@ export default function Example() {
 }
 ```
 
+## Next.js App Router Guide
+
+Example layout and page using the design system:
+
+```tsx
+// app/layout.tsx
+import '@syntaxsidekick/riadkilani-design-system/styles';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My Portfolio',
+  description: 'Powered by Riad Kilani Design System',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="min-h-dvh bg-background text-foreground">
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+```tsx
+// app/page.tsx
+import { Card, CardHeader, CardTitle, CardContent, Button, Input } from '@syntaxsidekick/riadkilani-design-system';
+
+export default function Page() {
+  return (
+    <main className="container mx-auto p-8">
+      <Card className="max-w-md">
+        <CardHeader>
+          <CardTitle>Welcome</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Input placeholder="Email" />
+          <Button>Get Started</Button>
+        </CardContent>
+      </Card>
+    </main>
+  );
+}
+```
+
 Tailwind optional: If your app also uses Tailwind, keep your own config. Optionally include the DS dist path so Tailwind scans DS files for classnames (not required to use the DS):
 
 ```js
