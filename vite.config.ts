@@ -16,6 +16,10 @@ export default defineConfig({
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
-    rollupOptions: {},
+    rollupOptions: {
+      output: {
+        exports: 'named',
+      },
+    },
   },
 })

@@ -6,13 +6,13 @@
   "private": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "style": "./dist/style.css",
+  "style": "./dist/riadkilani-design-system.css",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/style.css"
+    "./styles": "./dist/riadkilani-design-system.css"
   },
   "files": [
     "dist/**/*",

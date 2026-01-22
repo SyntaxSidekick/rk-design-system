@@ -26,7 +26,7 @@ showToast({ title: 'Hello', message: 'Design System v2' })
 Or include via HTML:
 
 ```html
-<link rel="stylesheet" href="/node_modules/@syntaxsidekick/riadkilani-design-system/dist/style.css">
+<link rel="stylesheet" href="/node_modules/@syntaxsidekick/riadkilani-design-system/dist/riadkilani-design-system.css">
 <script type="module">
   import DS from '/node_modules/@syntaxsidekick/riadkilani-design-system/dist/index.mjs'
   DS.init()
