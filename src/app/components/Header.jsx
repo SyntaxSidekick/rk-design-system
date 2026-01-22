@@ -22,61 +22,59 @@ export function Header({ theme, setTheme, contrast, setContrast, motion, setMoti
       <div className="docs-header__controls">
         <div className="ds-cluster ds-cluster--xs">
           <span className="ds-badge ds-badge--subtle ds-hidden-mobile" style={{ marginRight: 'var(--space-2)' }}>v2</span>
-          <label style={{ 
-            fontSize: 'var(--font-size-sm)', 
+
+          <label style={{
+            fontSize: 'var(--font-size-sm)',
             color: 'var(--text-secondary)',
             display: 'flex',
             alignItems: 'center',
             gap: 'var(--space-2)'
           }}>
-            <span className="ds-hidden-mobile">Theme:</span>
-            <select 
-              className="ds-select ds-input--sm"
-              value={theme}
-              onChange={(e) => setTheme(e.target.value)}
-              style={{ width: '100px' }}
-            >
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
+            <span className="ds-hidden-mobile">Dark</span>
+            <input
+              type="checkbox"
+              role="switch"
+              aria-label="Toggle dark mode"
+              className="ds-switch"
+              checked={theme === 'dark'}
+              onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+            />
           </label>
 
-          <label style={{ 
-            fontSize: 'var(--font-size-sm)', 
+          <label className="ds-hidden-mobile" style={{
+            fontSize: 'var(--font-size-sm)',
             color: 'var(--text-secondary)',
             display: 'flex',
             alignItems: 'center',
             gap: 'var(--space-2)'
-          }} className="ds-hidden-mobile">
-            <span>Contrast:</span>
-            <select 
-              className="ds-select ds-input--sm"
-              value={contrast}
-              onChange={(e) => setContrast(e.target.value)}
-              style={{ width: '100px' }}
-            >
-              <option value="normal">Normal</option>
-              <option value="high">High</option>
-            </select>
+          }}>
+            <span>High Contrast</span>
+            <input
+              type="checkbox"
+              role="switch"
+              aria-label="Toggle high contrast"
+              className="ds-switch"
+              checked={contrast === 'high'}
+              onChange={(e) => setContrast(e.target.checked ? 'high' : 'normal')}
+            />
           </label>
 
-          <label style={{ 
-            fontSize: 'var(--font-size-sm)', 
+          <label className="ds-hidden-mobile" style={{
+            fontSize: 'var(--font-size-sm)',
             color: 'var(--text-secondary)',
             display: 'flex',
             alignItems: 'center',
             gap: 'var(--space-2)'
-          }} className="ds-hidden-mobile">
-            <span>Motion:</span>
-            <select 
-              className="ds-select ds-input--sm"
-              value={motion}
-              onChange={(e) => setMotion(e.target.value)}
-              style={{ width: '100px' }}
-            >
-              <option value="normal">Normal</option>
-              <option value="reduced">Reduced</option>
-            </select>
+          }}>
+            <span>Reduced Motion</span>
+            <input
+              type="checkbox"
+              role="switch"
+              aria-label="Toggle reduced motion"
+              className="ds-switch"
+              checked={motion === 'reduced'}
+              onChange={(e) => setMotion(e.target.checked ? 'reduced' : 'normal')}
+            />
           </label>
         </div>
       </div>
