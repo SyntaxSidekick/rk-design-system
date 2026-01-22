@@ -1,0 +1,290 @@
+/**
+ * RIAD KILANI DESIGN SYSTEM
+ * Design Tokens - CSS Custom Properties
+ * 
+ * This file contains all design tokens for the system.
+ * Tokens are theme-agnostic raw values.
+ */
+
+:root {
+  /* ========================================
+     BRAND COLOR SCALE
+     Base colors from brand identity
+     ======================================== */
+  
+  /* Primary Brand (Blue) - Anchor: #2D6ABB */
+  --color-brand-50: #EBF2FA;
+  --color-brand-100: #D7E5F5;
+  --color-brand-200: #AFCBEB;
+  --color-brand-300: #7AC4F2;
+  --color-brand-400: #5497D6;
+  --color-brand-500: #2D6ABB;
+  --color-brand-600: #24559A;
+  --color-brand-700: #1C4179;
+  --color-brand-800: #142D58;
+  --color-brand-900: #0C1937;
+  --color-brand-950: #060D1E;
+
+  /* ========================================
+     NEUTRAL COLOR SCALE
+     Grays from black to light
+     ======================================== */
+  
+  --color-neutral-50: #F7F9FA;
+  --color-neutral-100: #E0EAEF;
+  --color-neutral-200: #C1D5DF;
+  --color-neutral-300: #A2C0CF;
+  --color-neutral-400: #83ABBF;
+  --color-neutral-500: #979898;
+  --color-neutral-600: #787878;
+  --color-neutral-700: #606060;
+  --color-neutral-800: #404040;
+  --color-neutral-900: #202020;
+  --color-neutral-950: #000000;
+
+  /* ========================================
+     SEMANTIC COLORS
+     Success, Warning, Danger, Info
+     ======================================== */
+  
+  /* Success (Green) */
+  --color-success-50: #ECFDF5;
+  --color-success-100: #D1FAE5;
+  --color-success-200: #A7F3D0;
+  --color-success-300: #6EE7B7;
+  --color-success-400: #34D399;
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065F46;
+  --color-success-900: #064E3B;
+  --color-success-950: #022C22;
+
+  /* Warning (Amber) */
+  --color-warning-50: #FFFBEB;
+  --color-warning-100: #FEF3C7;
+  --color-warning-200: #FDE68A;
+  --color-warning-300: #FCD34D;
+  --color-warning-400: #FBBF24;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+  --color-warning-700: #B45309;
+  --color-warning-800: #92400E;
+  --color-warning-900: #78350F;
+  --color-warning-950: #451A03;
+
+  /* Danger (Red) */
+  --color-danger-50: #FEF2F2;
+  --color-danger-100: #FEE2E2;
+  --color-danger-200: #FECACA;
+  --color-danger-300: #FCA5A5;
+  --color-danger-400: #F87171;
+  --color-danger-500: #EF4444;
+  --color-danger-600: #DC2626;
+  --color-danger-700: #B91C1C;
+  --color-danger-800: #991B1B;
+  --color-danger-900: #7F1D1D;
+  --color-danger-950: #450A0A;
+
+  /* Info (Cyan) */
+  --color-info-50: #ECFEFF;
+  --color-info-100: #CFFAFE;
+  --color-info-200: #A5F3FC;
+  --color-info-300: #67E8F9;
+  --color-info-400: #22D3EE;
+  --color-info-500: #06B6D4;
+  --color-info-600: #0891B2;
+  --color-info-700: #0E7490;
+  --color-info-800: #155E75;
+  --color-info-900: #164E63;
+  --color-info-950: #083344;
+
+  /* ========================================
+     TYPOGRAPHY TOKENS
+     Font families, sizes, weights, line heights
+     ======================================== */
+  
+  /* Font Families */
+   --font-heading: "DM Sans", "Inter", "Segoe UI", "Roboto", system-ui, sans-serif;
+   --font-body: "DM Sans", "Inter", "Segoe UI", "Roboto", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ========================================
+     SPACING SCALE
+     Based on 4px/8px base unit
+     ======================================== */
+  
+  --space-0: 0;
+  --space-1: 0.125rem;   /* 2px */
+  --space-2: 0.25rem;    /* 4px */
+  --space-3: 0.5rem;     /* 8px */
+  --space-4: 0.75rem;    /* 12px */
+  --space-5: 1rem;       /* 16px */
+  --space-6: 1.25rem;    /* 20px */
+  --space-7: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-9: 2.5rem;     /* 40px */
+  --space-10: 3rem;      /* 48px */
+  --space-11: 4rem;      /* 64px */
+  --space-12: 5rem;      /* 80px */
+  --space-13: 6rem;      /* 96px */
+  --space-14: 8rem;      /* 128px */
+  --space-15: 10rem;     /* 160px */
+  --space-16: 12rem;     /* 192px */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  
+  --radius-none: 0;
+  --radius-sm: 0.125rem;    /* 2px */
+  --radius-md: 0.25rem;     /* 4px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.75rem;     /* 12px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-3xl: 1.5rem;     /* 24px */
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+  /* ========================================
+     SHADOWS / ELEVATION
+     ======================================== */
+  
+  --shadow-e1: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-e2: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-e3: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-e4: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-e5: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-e6: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  /* ========================================
+     MOTION TOKENS
+     Durations, easing, delays
+     ======================================== */
+  
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-medium: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-slowest: 700ms;
+
+  /* Easing Curves */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.5, 1.5, 0.5, 1);
+
+  /* Delays */
+  --delay-none: 0ms;
+  --delay-short: 50ms;
+  --delay-medium: 100ms;
+  --delay-long: 200ms;
+
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+  
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+  --z-toast: 1700;
+  --z-max: 9999;
+
+  /* ========================================
+     LAYOUT TOKENS
+     Container widths, breakpoints, grid
+     ======================================== */
+  
+  /* Breakpoints */
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Container Max Widths */
+  --container-xs: 20rem;      /* 320px */
+  --container-sm: 40rem;      /* 640px */
+  --container-md: 48rem;      /* 768px */
+  --container-lg: 64rem;      /* 1024px */
+  --container-xl: 80rem;      /* 1280px */
+  --container-2xl: 96rem;     /* 1536px */
+  --container-full: 100%;
+
+  /* Grid */
+  --grid-columns: 12;
+  --grid-gutter: var(--space-5);  /* 16px */
+  --grid-gutter-lg: var(--space-8); /* 32px */
+
+  /* ========================================
+     BORDER WIDTHS
+     ======================================== */
+  
+  --border-width-0: 0;
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-8: 8px;
+
+  /* ========================================
+     OPACITY
+     ======================================== */
+  
+  --opacity-0: 0;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+}

@@ -30,7 +30,12 @@ export function Header({ theme, setTheme, contrast, setContrast, motion, setMoti
             alignItems: 'center',
             gap: 'var(--space-2)'
           }}>
-            <span className="ds-hidden-mobile">Dark</span>
+            <span className="ds-hidden-mobile" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+              </svg>
+              Dark
+            </span>
             <input
               type="checkbox"
               role="switch"
@@ -48,7 +53,12 @@ export function Header({ theme, setTheme, contrast, setContrast, motion, setMoti
             alignItems: 'center',
             gap: 'var(--space-2)'
           }}>
-            <span>High Contrast</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M12 3v18M21 12H3"/>
+              </svg>
+              High Contrast
+            </span>
             <input
               type="checkbox"
               role="switch"
@@ -66,7 +76,12 @@ export function Header({ theme, setTheme, contrast, setContrast, motion, setMoti
             alignItems: 'center',
             gap: 'var(--space-2)'
           }}>
-            <span>Reduced Motion</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M2 12h7l-3 3M22 12h-7l3-3"/>
+              </svg>
+              Reduced Motion
+            </span>
             <input
               type="checkbox"
               role="switch"
