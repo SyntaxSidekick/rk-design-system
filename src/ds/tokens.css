@@ -105,7 +105,7 @@
      ======================================== */
   
   /* Font Families */
-   --font-heading: "DM Sans", "Inter", "Segoe UI", "Roboto", system-ui, sans-serif;
+   --font-heading: "Trajan Pro", "Cinzel", "Georgia", serif;
    --font-body: "DM Sans", "Inter", "Segoe UI", "Roboto", system-ui, sans-serif;
   --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
 
