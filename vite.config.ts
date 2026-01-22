@@ -1,12 +1,9 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import react from '@vitejs/plugin-react'
+// No React plugin needed for library-only build
 
 export default defineConfig({
-  plugins: [
-    // React plugin for the demo app; Tailwind removed in v2
-    react(),
-  ],
+  plugins: [],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -19,15 +16,6 @@ export default defineConfig({
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
-    rollupOptions: {
-      // Externalize React for demo/dev; library JS is vanilla
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
-    },
+    rollupOptions: {},
   },
 })
