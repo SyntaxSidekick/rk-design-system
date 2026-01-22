@@ -1,0 +1,39 @@
+{
+  "name": "@syntaxsidekick/riadkilani-design-system",
+  "version": "0.0.0",
+  "description": "Placeholder for the redesigned system (no Tailwind/PostCSS)",
+  "type": "module",
+  "private": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "echo \"Build steps will be added with new DS\"",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Riad Kilani",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyntaxSidekick/rk-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SyntaxSidekick/rk-design-system/issues"
+  },
+  "homepage": "https://syntaxsidekick.github.io/rk-design-system",
+  "publishConfig": {
+    "access": "public"
+  }
+}
