@@ -13,7 +13,31 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/riadkilani-design-system.css"
+    "./styles": "./dist/riadkilani-design-system.css",
+    "./tabs": {
+      "import": "./dist/components/tabs.mjs",
+      "require": "./dist/components/tabs.cjs"
+    },
+    "./accordion": {
+      "import": "./dist/components/accordion.mjs",
+      "require": "./dist/components/accordion.cjs"
+    },
+    "./dropdown": {
+      "import": "./dist/components/dropdown.mjs",
+      "require": "./dist/components/dropdown.cjs"
+    },
+    "./tooltip": {
+      "import": "./dist/components/tooltip.mjs",
+      "require": "./dist/components/tooltip.cjs"
+    },
+    "./modal": {
+      "import": "./dist/components/modal.mjs",
+      "require": "./dist/components/modal.cjs"
+    },
+    "./toast": {
+      "import": "./dist/components/toast.mjs",
+      "require": "./dist/components/toast.cjs"
+    }
   },
   "files": [
     "dist/**/*",
@@ -23,6 +47,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:demo": "vite build --config vite.demo.config.ts",
     "postbuild": "node scripts/copy-types.cjs",
     "prepublishOnly": "npm run build"
   },

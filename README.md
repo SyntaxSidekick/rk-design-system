@@ -1,7 +1,7 @@
 
 # Riad Kilani Design System v2
 
-Version 2 removes Tailwind and PostCSS. The system is now pure CSS (tokens, themes, motion, components) with optional vanilla JS behaviors.
+Version 2 removes Tailwind and PostCSS entirely — no utility frameworks or preprocessors required. The system is pure CSS (tokens, themes, motion, components) with optional vanilla JS behaviors.
 
 ## Install
 
@@ -40,6 +40,26 @@ Or include via HTML:
 - CSS tokens: colors, spacing, radius, motion in `src/ds/*.css`.
 - The JS behaviors attach to `window.DesignSystem` and are exported for ESM/CJS.
 
+## Demo (GitHub Pages)
+
+The demo app (React) is separate from the package so the npm module remains clean and easy to install. It is deployed to GitHub Pages from this repository.
+
+- Live: https://syntaxsidekick.github.io/rk-design-system/
+- Built with Vite using `vite.demo.config.ts` and deployed via `.github/workflows/deploy-demo.yml`.
+
+Local demo dev:
+
+```
+npm install
+npm run dev
+```
+
+Build demo (for Pages):
+
+```
+npm run build:demo
+```
+
 ## Build & Publish
 
 ```
@@ -52,6 +72,8 @@ npm publish --access public
 
 Outputs are emitted to `dist/`:
 
-- `index.mjs` and `index.cjs` (library entry)
-- `style.css` (bundled CSS)
+ - `index.mjs` and `index.cjs` (library entry)
+ - `riadkilani-design-system.css` (bundled CSS)
+
+Only `dist/**/*`, `README.md`, and `LICENSE` are published to npm (see `package.json` `files` field). The demo is excluded.
   

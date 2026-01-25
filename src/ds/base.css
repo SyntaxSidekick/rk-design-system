@@ -1,0 +1,335 @@
+/**
+ * RIAD KILANI DESIGN SYSTEM
+ * Base Styles - Reset, Typography, Layout Primitives
+ */
+
+/* ========================================
+   CSS RESET & BASE
+   ======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--surface-page);
+  min-height: 100vh;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  margin-bottom: var(--space-5);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+strong, b {
+  font-weight: var(--font-weight-semibold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  background-color: var(--surface-secondary);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+pre {
+  background-color: var(--surface-secondary);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  margin-bottom: var(--space-5);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: var(--border-width-4) solid var(--border-brand);
+  padding-left: var(--space-5);
+  margin: var(--space-6) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: var(--border-width-1) solid var(--border-default);
+  margin: var(--space-8) 0;
+}
+
+ul, ol {
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-6);
+  color: var(--text-secondary);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* ========================================
+   FOCUS MANAGEMENT
+   ======================================== */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+/* ========================================
+   LAYOUT PRIMITIVES
+   ======================================== */
+
+/* Container */
+.ds-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+
+.ds-container--xs { max-width: var(--container-xs); }
+.ds-container--sm { max-width: var(--container-sm); }
+.ds-container--md { max-width: var(--container-md); }
+.ds-container--lg { max-width: var(--container-lg); }
+.ds-container--xl { max-width: var(--container-xl); }
+.ds-container--2xl { max-width: var(--container-2xl); }
+
+/* Stack - Vertical spacing */
+.ds-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-stack--xs > * + * { margin-top: var(--space-2); }
+.ds-stack--sm > * + * { margin-top: var(--space-3); }
+.ds-stack--md > * + * { margin-top: var(--space-5); }
+.ds-stack--lg > * + * { margin-top: var(--space-8); }
+.ds-stack--xl > * + * { margin-top: var(--space-10); }
+
+/* Cluster - Horizontal spacing with wrap */
+.ds-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.ds-cluster--xs { gap: var(--space-2); }
+.ds-cluster--sm { gap: var(--space-3); }
+.ds-cluster--md { gap: var(--space-5); }
+.ds-cluster--lg { gap: var(--space-8); }
+.ds-cluster--xl { gap: var(--space-10); }
+
+/* Grid */
+.ds-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.ds-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.ds-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.ds-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.ds-grid--6 { grid-template-columns: repeat(6, 1fr); }
+.ds-grid--12 { grid-template-columns: repeat(12, 1fr); }
+
+@media (max-width: 768px) {
+  .ds-grid--2,
+  .ds-grid--3,
+  .ds-grid--4,
+  .ds-grid--6,
+  .ds-grid--12 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar Layout */
+.ds-sidebar-layout {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.ds-sidebar-layout__sidebar {
+  flex: 0 0 16rem;
+}
+
+.ds-sidebar-layout__content {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .ds-sidebar-layout {
+    flex-direction: column;
+  }
+  
+  .ds-sidebar-layout__sidebar {
+    flex: 1;
+  }
+}
+
+/* Center */
+.ds-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacer */
+.ds-spacer {
+  flex: 1;
+}
+
+/* Divider */
+.ds-divider {
+  border: 0;
+  border-top: var(--border-width-1) solid var(--border-default);
+  margin: var(--space-6) 0;
+}
+
+.ds-divider--vertical {
+  border: 0;
+  border-left: var(--border-width-1) solid var(--border-default);
+  margin: 0 var(--space-6);
+  height: auto;
+  align-self: stretch;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Visibility */
+.ds-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.ds-hidden {
+  display: none !important;
+}
+
+/* Text Alignment */
+.ds-text-left { text-align: left; }
+.ds-text-center { text-align: center; }
+.ds-text-right { text-align: right; }
+
+/* Truncate */
+.ds-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ds-hidden-mobile { display: none !important; }
+}
+
+@media (min-width: 641px) {
+  .ds-hidden-desktop { display: none !important; }
+}

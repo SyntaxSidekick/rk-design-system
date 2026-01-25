@@ -200,11 +200,11 @@
   
   /* Durations */
   --duration-instant: 0ms;
-  --duration-fast: 150ms;
-  --duration-medium: 250ms;
-  --duration-slow: 350ms;
-  --duration-slower: 500ms;
-  --duration-slowest: 700ms;
+   --duration-fast: 200ms;
+   --duration-medium: 350ms;
+   --duration-slow: 500ms;
+   --duration-slower: 700ms;
+   --duration-slowest: 1000ms;
 
   /* Easing Curves */
   --ease-linear: linear;

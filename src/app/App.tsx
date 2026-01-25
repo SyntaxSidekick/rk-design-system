@@ -48,12 +48,12 @@ export default function App() {
   const [motion, setMotion] = useState('normal');
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Load design system JavaScript behaviors
+  // Design system behaviors are loaded via package import in main.tsx
   useEffect(() => {
-    // Dynamically import and execute the design system JavaScript
-    import('../ds/components.js').catch(err => {
-      console.warn('Design system behaviors failed to load:', err);
-    });
+    // Ensure DS is initialized once on mount
+    if (window.DesignSystem) {
+      window.DesignSystem.init();
+    }
   }, []);
 
   // Apply theme to document

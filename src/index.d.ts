@@ -21,3 +21,11 @@ export const openModal: DesignSystemAPI['openModal']
 export const closeModal: DesignSystemAPI['closeModal']
 export const showToast: DesignSystemAPI['showToast']
 export const dismissToast: DesignSystemAPI['dismissToast']
+
+// Component subpath exports (code-split)
+export * as tabs from './components/tabs'
+export * as accordion from './components/accordion'
+export * as dropdown from './components/dropdown'
+export * as tooltip from './components/tooltip'
+export * as modal from './components/modal'
+export * as toast from './components/toast'

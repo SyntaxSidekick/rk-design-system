@@ -1,0 +1,454 @@
+/**
+ * RIAD KILANI DESIGN SYSTEM
+ * Motion & Animation Library
+ * 
+ * Keyframes, transitions, and animation utilities
+ */
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+/* Fade */
+@keyframes ds-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ds-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Slide */
+@keyframes ds-slide-up {
+  from { transform: translateY(1.5rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes ds-slide-down {
+  from { transform: translateY(-1.5rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes ds-slide-left {
+  from { transform: translateX(1.5rem); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes ds-slide-right {
+  from { transform: translateX(-1.5rem); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Scale */
+@keyframes ds-scale-in {
+  from { transform: scale(0.90); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes ds-scale-out {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.90); opacity: 0; }
+}
+
+@keyframes ds-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Rotate */
+@keyframes ds-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ds-rotate-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Bounce */
+@keyframes ds-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.75rem); }
+}
+
+@keyframes ds-bounce-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(0.75rem); }
+}
+
+/* Wiggle */
+@keyframes ds-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+@keyframes ds-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-0.35rem); }
+  20%, 40%, 60%, 80% { transform: translateX(0.35rem); }
+}
+
+/* Pulse */
+@keyframes ds-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes ds-pulse-scale {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+/* Glow */
+@keyframes ds-glow {
+  0%, 100% { box-shadow: 0 0 4px var(--color-brand-300); }
+  50% { box-shadow: 0 0 16px var(--color-brand-400), 0 0 24px var(--color-brand-300); }
+}
+
+/* Shimmer (for skeleton loading) */
+@keyframes ds-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Progress Indeterminate */
+@keyframes ds-progress-indeterminate {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+/* Spinner */
+@keyframes ds-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Dots Loading */
+@keyframes ds-dot-pulse {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+/* Ripple */
+@keyframes ds-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+/* Gradient Shift */
+@keyframes ds-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========================================
+   ANIMATION UTILITY CLASSES
+   ======================================== */
+
+/* Fade */
+.ds-animate-fade-in {
+  animation: ds-fade-in var(--duration-medium) var(--ease-out);
+}
+
+.ds-animate-fade-out {
+  animation: ds-fade-out var(--duration-medium) var(--ease-out);
+}
+
+/* Slide */
+.ds-animate-slide-up {
+  animation: ds-slide-up var(--duration-medium) var(--ease-out);
+}
+
+.ds-animate-slide-down {
+  animation: ds-slide-down var(--duration-medium) var(--ease-out);
+}
+
+.ds-animate-slide-left {
+  animation: ds-slide-left var(--duration-medium) var(--ease-out);
+}
+
+.ds-animate-slide-right {
+  animation: ds-slide-right var(--duration-medium) var(--ease-out);
+}
+
+/* Scale */
+.ds-animate-scale-in {
+  animation: ds-scale-in var(--duration-fast) var(--ease-out);
+}
+
+.ds-animate-scale-out {
+  animation: ds-scale-out var(--duration-fast) var(--ease-in);
+}
+
+.ds-animate-pop {
+  animation: ds-pop var(--duration-fast) var(--ease-bounce);
+}
+
+/* Rotate */
+.ds-animate-rotate {
+  animation: ds-rotate var(--duration-slow) var(--ease-linear) infinite;
+}
+
+/* Bounce */
+.ds-animate-bounce {
+  animation: ds-bounce var(--duration-slow) var(--ease-in-out) infinite;
+}
+
+/* Wiggle */
+.ds-animate-wiggle {
+  animation: ds-wiggle var(--duration-medium) var(--ease-in-out);
+}
+
+.ds-animate-shake {
+  animation: ds-shake var(--duration-medium) var(--ease-in-out);
+}
+
+/* Pulse */
+.ds-animate-pulse {
+  animation: ds-pulse 2s var(--ease-in-out) infinite;
+}
+
+.ds-animate-pulse-scale {
+  animation: ds-pulse-scale 2s var(--ease-in-out) infinite;
+}
+
+/* Glow */
+.ds-animate-glow {
+  animation: ds-glow 2s var(--ease-in-out) infinite;
+}
+
+/* Shimmer */
+.ds-animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 0%,
+    var(--surface-tertiary) 50%,
+    var(--surface-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: ds-shimmer 2s var(--ease-linear) infinite;
+}
+
+/* Spin */
+.ds-animate-spin {
+  animation: ds-spin 1s var(--ease-linear) infinite;
+}
+
+/* ========================================
+   TRANSITION UTILITIES
+   ======================================== */
+
+.ds-transition-all {
+  transition: all var(--duration-medium) var(--ease-out);
+}
+
+.ds-transition-colors {
+  transition: color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.ds-transition-opacity {
+  transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.ds-transition-transform {
+  transition: transform var(--duration-medium) var(--ease-out);
+}
+
+.ds-transition-shadow {
+  transition: box-shadow var(--duration-medium) var(--ease-out);
+}
+
+/* ========================================
+   SPINNERS
+   ======================================== */
+
+/* Border Spinner */
+.ds-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--border-brand);
+  border-radius: var(--radius-full);
+  animation: ds-spin 0.7s var(--ease-linear) infinite;
+}
+
+.ds-spinner--sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 1.5px;
+}
+
+.ds-spinner--lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 3px;
+}
+
+/* Dots Spinner */
+.ds-spinner-dots {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.ds-spinner-dots__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--text-brand);
+  border-radius: var(--radius-full);
+  animation: ds-dot-pulse 1.4s var(--ease-in-out) infinite;
+}
+
+.ds-spinner-dots__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ds-spinner-dots__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Dual Ring Spinner */
+.ds-spinner-dual {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ds-spinner-dual::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border-brand);
+  border-color: var(--border-brand) transparent var(--border-brand) transparent;
+  animation: ds-spin 1.2s var(--ease-linear) infinite;
+}
+
+/* ========================================
+   MICRO-INTERACTIONS
+   ======================================== */
+
+/* Button Press */
+.ds-interact-press {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.ds-interact-press:active {
+  transform: scale(0.97);
+}
+
+/* Hover Lift */
+.ds-interact-lift {
+  transition: transform var(--duration-medium) var(--ease-out),
+              box-shadow var(--duration-medium) var(--ease-out);
+}
+
+.ds-interact-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-e3);
+}
+
+/* Focus Ring Animation */
+.ds-focus-ring {
+  position: relative;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.ds-focus-ring:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Toggle Animation */
+.ds-toggle-animation {
+  transition: transform var(--duration-medium) var(--ease-bounce);
+}
+
+.ds-toggle-animation[aria-checked="true"] {
+  transform: translateX(100%);
+}
+
+/* ========================================
+   SKELETON LOADING
+   ======================================== */
+
+.ds-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 0%,
+    var(--surface-tertiary) 50%,
+    var(--surface-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: ds-shimmer 1.5s var(--ease-linear) infinite;
+  border-radius: var(--radius-md);
+  opacity: 0.7;
+}
+
+.ds-skeleton--text {
+  height: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.ds-skeleton--heading {
+  height: 2rem;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.ds-skeleton--avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+}
+
+.ds-skeleton--button {
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: var(--radius-lg);
+}
+
+/* ========================================
+   ENTER/EXIT TRANSITIONS
+   ======================================== */
+
+/* Classes to add/remove for transitions */
+.ds-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.ds-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--duration-medium) var(--ease-out),
+              transform var(--duration-medium) var(--ease-out);
+}
+
+.ds-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ds-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity var(--duration-fast) var(--ease-in),
+              transform var(--duration-fast) var(--ease-in);
+}

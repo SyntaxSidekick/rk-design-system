@@ -1,0 +1,9 @@
+/**
+ * Font Imports for Riad Kilani Design System
+ */
+
+/* DM Sans - Body/UI Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Cinzel - Fallback for Trajan Pro (heading font) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
