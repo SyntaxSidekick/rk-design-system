@@ -25,7 +25,7 @@ export function AccordionPage() {
                 <span className="ds-accordion__icon">▼</span>
               </button>
               <div id="content-1" className="ds-accordion__content">
-                <p>This is the content for section 1. Click the header to collapse this section.</p>
+                <p>This is the content for section 1. Opening another section will close this one.</p>
               </div>
             </div>
             
@@ -39,7 +39,7 @@ export function AccordionPage() {
                 <span className="ds-accordion__icon">▼</span>
               </button>
               <div id="content-2" className="ds-accordion__content" hidden>
-                <p>This is the content for section 2. Each section can be expanded independently.</p>
+                <p>This is the content for section 2. Only one section stays open at a time.</p>
               </div>
             </div>
             

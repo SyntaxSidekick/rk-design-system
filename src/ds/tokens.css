@@ -12,18 +12,20 @@
      Base colors from brand identity
      ======================================== */
   
-  /* Primary Brand (Blue) - Anchor: #2D6ABB */
-  --color-brand-50: #EBF2FA;
-  --color-brand-100: #D7E5F5;
-  --color-brand-200: #AFCBEB;
-  --color-brand-300: #7AC4F2;
-  --color-brand-400: #5497D6;
-  --color-brand-500: #2D6ABB;
-  --color-brand-600: #24559A;
-  --color-brand-700: #1C4179;
-  --color-brand-800: #142D58;
-  --color-brand-900: #0C1937;
-  --color-brand-950: #060D1E;
+  /* Primary Brand (Kilani-blue) - Anchor: #142D58 */
+  --color-kilani-blue: #142D58;
+  --color-brand-primary: var(--color-kilani-blue);
+  --color-brand-50: #EEF3FA;
+  --color-brand-100: #D6E2F1;
+  --color-brand-200: #AEC4E1;
+  --color-brand-300: #7198CA;
+  --color-brand-400: #315F9D;
+  --color-brand-500: var(--color-kilani-blue);
+  --color-brand-600: #102648;
+  --color-brand-700: #0D1F3B;
+  --color-brand-800: #09162B;
+  --color-brand-900: #060F1D;
+  --color-brand-950: #030813;
 
   /* ========================================
      NEUTRAL COLOR SCALE

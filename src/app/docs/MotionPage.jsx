@@ -3,10 +3,14 @@
  */
 
 import { Section, CodeBlock } from '../components/DocHelpers';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function MotionPage() {
+  const [introActive, setIntroActive] = useState(true);
+  const [previewLoop, setPreviewLoop] = useState(0);
   const [activeAnimation, setActiveAnimation] = useState(null);
+  const [replayKey, setReplayKey] = useState(0);
+  const replayTimeoutRef = useRef(null);
 
   const animations = [
     { name: 'Fade In', class: 'ds-animate-fade-in' },
@@ -20,9 +24,41 @@ export function MotionPage() {
     { name: 'Bounce', class: 'ds-animate-bounce' },
   ];
 
+  useEffect(() => {
+    let loopCount = 0;
+    const intervalId = window.setInterval(() => {
+      loopCount += 1;
+      setPreviewLoop((loop) => loop + 1);
+
+      if (loopCount >= 3) {
+        window.clearInterval(intervalId);
+        setIntroActive(false);
+      }
+    }, 1800);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (replayTimeoutRef.current) {
+        window.clearTimeout(replayTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const triggerAnimation = (animationClass) => {
+    if (replayTimeoutRef.current) {
+      window.clearTimeout(replayTimeoutRef.current);
+    }
+
+    setIntroActive(false);
     setActiveAnimation(animationClass);
-    setTimeout(() => setActiveAnimation(null), 1000);
+    setReplayKey((key) => key + 1);
+
+    replayTimeoutRef.current = window.setTimeout(() => {
+      setActiveAnimation(null);
+    }, 1800);
   };
 
   return (
@@ -35,20 +71,21 @@ export function MotionPage() {
 
       <Section title="Animation Utilities">
         <p style={{ marginBottom: 'var(--space-5)', color: 'var(--text-secondary)' }}>
-          Click any animation to see it in action. Simply add the class to any element.
+          The utilities preview briefly when the page loads. Use each button to replay a single animation.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-5)' }}>
-          {animations.map((animation) => (
+          {animations.map((animation, index) => (
             <div key={animation.name}>
               <div className="docs-motion-demo">
                 <div 
-                  className={`docs-motion-demo__box ${activeAnimation === animation.class ? animation.class : ''}`}
-                  key={activeAnimation}
+                  className={`docs-motion-demo__box ${(introActive || activeAnimation === animation.class) ? animation.class : ''}`}
+                  key={`${animation.class}-${introActive ? previewLoop : activeAnimation === animation.class ? replayKey : 'idle'}`}
+                  style={{ animationDelay: introActive ? `${index * 80}ms` : '0ms' }}
                 />
               </div>
               <button 
-                className="ds-btn ds-btn--outline" 
+                className="ds-btn ds-btn--solid" 
                 style={{ width: '100%', marginTop: 'var(--space-3)' }}
                 onClick={() => triggerAnimation(animation.class)}
               >

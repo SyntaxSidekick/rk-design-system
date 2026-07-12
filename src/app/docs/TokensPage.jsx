@@ -6,17 +6,17 @@ import { Section } from '../components/DocHelpers';
 
 export function TokensPage() {
   const brandColors = [
-    { name: 'brand-50', value: '#EBF2FA' },
-    { name: 'brand-100', value: '#D7E5F5' },
-    { name: 'brand-200', value: '#AFCBEB' },
-    { name: 'brand-300', value: '#7AC4F2' },
-    { name: 'brand-400', value: '#5497D6' },
-    { name: 'brand-500', value: '#2D6ABB' },
-    { name: 'brand-600', value: '#24559A' },
-    { name: 'brand-700', value: '#1C4179' },
-    { name: 'brand-800', value: '#142D58' },
-    { name: 'brand-900', value: '#0C1937' },
-    { name: 'brand-950', value: '#060D1E' },
+    { name: 'brand-50', value: '#EEF3FA' },
+    { name: 'brand-100', value: '#D6E2F1' },
+    { name: 'brand-200', value: '#AEC4E1' },
+    { name: 'brand-300', value: '#7198CA' },
+    { name: 'brand-400', value: '#315F9D' },
+    { name: 'brand-500', value: '#142D58', label: 'Kilani-blue' },
+    { name: 'brand-600', value: '#102648' },
+    { name: 'brand-700', value: '#0D1F3B' },
+    { name: 'brand-800', value: '#09162B' },
+    { name: 'brand-900', value: '#060F1D' },
+    { name: 'brand-950', value: '#030813' },
   ];
 
   const neutralColors = [
@@ -78,6 +78,25 @@ export function TokensPage() {
     { name: 'full', value: '50%' },
   ];
 
+  const breakpoints = [
+    { name: 'breakpoint-xs', value: '0px', usage: 'Base styles, smallest viewports' },
+    { name: 'breakpoint-sm', value: '640px', usage: 'Small phones and larger' },
+    { name: 'breakpoint-md', value: '768px', usage: 'Tablets and larger' },
+    { name: 'breakpoint-lg', value: '1024px', usage: 'Small desktops and larger' },
+    { name: 'breakpoint-xl', value: '1280px', usage: 'Wide desktops' },
+    { name: 'breakpoint-2xl', value: '1536px', usage: 'Extra-wide layouts' },
+  ];
+
+  const containers = [
+    { name: 'container-xs', value: '20rem', px: '320px' },
+    { name: 'container-sm', value: '40rem', px: '640px' },
+    { name: 'container-md', value: '48rem', px: '768px' },
+    { name: 'container-lg', value: '64rem', px: '1024px' },
+    { name: 'container-xl', value: '80rem', px: '1280px' },
+    { name: 'container-2xl', value: '96rem', px: '1536px' },
+    { name: 'container-full', value: '100%', px: 'Fluid' },
+  ];
+
   return (
     <div>
       <h1>Design Tokens</h1>
@@ -88,8 +107,28 @@ export function TokensPage() {
       <Section title="Color Palette">
         <h3 style={{ marginBottom: 'var(--space-4)' }}>Brand Colors</h3>
         <p style={{ marginBottom: 'var(--space-5)', color: 'var(--text-secondary)' }}>
-          Primary brand colors derived from the Riad Kilani identity.
+          Primary brand colors anchored on Kilani-blue (#142D58).
         </p>
+        <div className="ds-card" style={{ marginBottom: 'var(--space-6)' }}>
+          <div className="ds-card__body" style={{ display: 'grid', gridTemplateColumns: 'minmax(6rem, 10rem) 1fr', gap: 'var(--space-5)', alignItems: 'center' }}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-kilani-blue)',
+                borderRadius: 'var(--radius-lg)',
+                minHeight: '6rem',
+                border: 'var(--border-width-1) solid var(--border-default)'
+              }}
+            />
+            <div>
+              <h4 style={{ marginBottom: 'var(--space-2)' }}>Kilani-blue</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                <code>--color-kilani-blue: #142D58</code>
+                <code>--color-brand-primary: var(--color-kilani-blue)</code>
+                <code>--color-brand-500: var(--color-kilani-blue)</code>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="docs-color-grid">
           {brandColors.map((color) => (
             <div key={color.name} className="docs-color-swatch">
@@ -99,6 +138,9 @@ export function TokensPage() {
               />
               <div className="docs-color-swatch__info">
                 <div className="docs-color-swatch__name">--color-{color.name}</div>
+                {color.label && (
+                  <div className="docs-color-swatch__value">{color.label}</div>
+                )}
                 <div className="docs-color-swatch__value">{color.value}</div>
               </div>
             </div>
@@ -253,6 +295,74 @@ export function TokensPage() {
               </span>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section title="Responsive Breakpoints">
+        <p style={{ marginBottom: 'var(--space-5)', color: 'var(--text-secondary)' }}>
+          Viewport breakpoints, container widths, and grid tokens for responsive layouts.
+        </p>
+
+        <h3 style={{ marginBottom: 'var(--space-4)' }}>Breakpoints</h3>
+        <div className="ds-table-container" style={{ marginBottom: 'var(--space-8)' }}>
+          <table className="ds-table">
+            <thead className="ds-table__header">
+              <tr className="ds-table__row">
+                <th className="ds-table__header-cell">Token</th>
+                <th className="ds-table__header-cell">Value</th>
+                <th className="ds-table__header-cell">Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {breakpoints.map((breakpoint) => (
+                <tr key={breakpoint.name} className="ds-table__row">
+                  <td className="ds-table__cell"><code>--{breakpoint.name}</code></td>
+                  <td className="ds-table__cell">{breakpoint.value}</td>
+                  <td className="ds-table__cell">{breakpoint.usage}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style={{ marginBottom: 'var(--space-4)' }}>Containers</h3>
+        <div className="ds-table-container" style={{ marginBottom: 'var(--space-8)' }}>
+          <table className="ds-table">
+            <thead className="ds-table__header">
+              <tr className="ds-table__row">
+                <th className="ds-table__header-cell">Token</th>
+                <th className="ds-table__header-cell">Value</th>
+                <th className="ds-table__header-cell">Equivalent</th>
+              </tr>
+            </thead>
+            <tbody>
+              {containers.map((container) => (
+                <tr key={container.name} className="ds-table__row">
+                  <td className="ds-table__cell"><code>--{container.name}</code></td>
+                  <td className="ds-table__cell">{container.value}</td>
+                  <td className="ds-table__cell">{container.px}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="docs-code-block">
+          <div className="docs-code-block__header">
+            <span className="docs-code-block__title">Responsive CSS</span>
+          </div>
+          <div className="docs-code-block__content">
+            <pre><code>{`@media (min-width: 768px) {
+  .example {
+    max-width: var(--container-md);
+  }
+}
+
+.layout {
+  display: grid;
+  gap: var(--grid-gutter);
+}`}</code></pre>
+          </div>
         </div>
       </Section>
 

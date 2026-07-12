@@ -85,20 +85,48 @@
      ======================================== */
   
   function initAccordion(accordionElement) {
+    if (accordionElement.dataset.dsAccordionInitialized === 'true') return;
+    accordionElement.dataset.dsAccordionInitialized = 'true';
+
     const triggers = Array.from(accordionElement.querySelectorAll('.ds-accordion__trigger'));
+
+    function closeTrigger(trigger) {
+      const contentId = trigger.getAttribute('aria-controls');
+      const content = document.getElementById(contentId);
+
+      trigger.setAttribute('aria-expanded', 'false');
+      if (content) {
+        content.setAttribute('hidden', 'true');
+      }
+    }
+
+    function openTrigger(trigger) {
+      const contentId = trigger.getAttribute('aria-controls');
+      const content = document.getElementById(contentId);
+
+      triggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          closeTrigger(otherTrigger);
+        }
+      });
+
+      trigger.setAttribute('aria-expanded', 'true');
+      if (content) {
+        content.removeAttribute('hidden');
+      }
+    }
+
+    const initiallyExpanded = triggers.filter(trigger => trigger.getAttribute('aria-expanded') === 'true');
+    initiallyExpanded.slice(1).forEach(closeTrigger);
 
     triggers.forEach(trigger => {
       trigger.addEventListener('click', () => {
         const expanded = trigger.getAttribute('aria-expanded') === 'true';
-        const contentId = trigger.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
 
         if (expanded) {
-          trigger.setAttribute('aria-expanded', 'false');
-          content.setAttribute('hidden', 'true');
+          closeTrigger(trigger);
         } else {
-          trigger.setAttribute('aria-expanded', 'true');
-          content.removeAttribute('hidden');
+          openTrigger(trigger);
         }
       });
 

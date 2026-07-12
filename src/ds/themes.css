@@ -18,15 +18,15 @@
   --surface-secondary: var(--color-neutral-100);
   --surface-tertiary: var(--color-neutral-200);
   --surface-overlay: rgba(0, 0, 0, 0.5);
-  --surface-brand: var(--color-brand-500);
+  --surface-brand: var(--color-brand-primary);
   --surface-brand-subtle: var(--color-brand-50);
 
   /* Borders */
   --border-default: var(--color-neutral-300);
   --border-strong: var(--color-neutral-500);
   --border-subtle: var(--color-neutral-200);
-  --border-brand: var(--color-brand-500);
-  --border-focus: var(--color-brand-500);
+  --border-brand: var(--color-brand-primary);
+  --border-focus: var(--color-brand-primary);
 
   /* Text */
   --text-primary: var(--color-neutral-950);
@@ -35,9 +35,9 @@
   --text-placeholder: var(--color-neutral-400);
   --text-disabled: var(--color-neutral-400);
   --text-inverse: #FFFFFF;
-  --text-brand: var(--color-brand-700);
-  --text-link: var(--color-brand-600);
-  --text-link-hover: var(--color-brand-700);
+  --text-brand: var(--color-brand-primary);
+  --text-link: var(--color-brand-primary);
+  --text-link-hover: var(--color-brand-600);
 
   /* Interactive States */
   --state-hover-opacity: 0.08;
@@ -47,7 +47,7 @@
   --state-disabled-opacity: 0.38;
 
   /* Focus Ring */
-  --focus-ring-color: var(--color-brand-500);
+  --focus-ring-color: var(--color-brand-primary);
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
 
@@ -88,15 +88,15 @@
   --surface-secondary: var(--color-neutral-800);
   --surface-tertiary: var(--color-neutral-700);
   --surface-overlay: rgba(0, 0, 0, 0.7);
-  --surface-brand: var(--color-brand-600);
+  --surface-brand: var(--color-brand-400);
   --surface-brand-subtle: var(--color-brand-950);
 
   /* Borders */
   --border-default: var(--color-neutral-700);
   --border-strong: var(--color-neutral-500);
   --border-subtle: var(--color-neutral-800);
-  --border-brand: var(--color-brand-400);
-  --border-focus: var(--color-brand-400);
+  --border-brand: var(--color-brand-300);
+  --border-focus: var(--color-brand-300);
 
   /* Text */
   --text-primary: var(--color-neutral-50);
@@ -107,10 +107,10 @@
   --text-inverse: var(--color-neutral-950);
   --text-brand: var(--color-brand-300);
   --text-link: var(--color-brand-400);
-  --text-link-hover: var(--color-brand-300);
+  --text-link-hover: var(--color-brand-200);
 
   /* Focus Ring */
-  --focus-ring-color: var(--color-brand-400);
+  --focus-ring-color: var(--color-brand-300);
 
   /* Semantic Backgrounds */
   --bg-success: var(--color-success-950);
@@ -148,15 +148,15 @@
     --surface-secondary: var(--color-neutral-800);
     --surface-tertiary: var(--color-neutral-700);
     --surface-overlay: rgba(0, 0, 0, 0.7);
-    --surface-brand: var(--color-brand-600);
+    --surface-brand: var(--color-brand-400);
     --surface-brand-subtle: var(--color-brand-950);
 
     /* Borders */
     --border-default: var(--color-neutral-700);
     --border-strong: var(--color-neutral-500);
     --border-subtle: var(--color-neutral-800);
-    --border-brand: var(--color-brand-400);
-    --border-focus: var(--color-brand-400);
+    --border-brand: var(--color-brand-300);
+    --border-focus: var(--color-brand-300);
 
     /* Text */
     --text-primary: var(--color-neutral-50);
@@ -167,10 +167,10 @@
     --text-inverse: var(--color-neutral-950);
     --text-brand: var(--color-brand-300);
     --text-link: var(--color-brand-400);
-    --text-link-hover: var(--color-brand-300);
+    --text-link-hover: var(--color-brand-200);
 
     /* Focus Ring */
-    --focus-ring-color: var(--color-brand-400);
+    --focus-ring-color: var(--color-brand-300);
 
     /* Semantic Backgrounds */
     --bg-success: var(--color-success-950);

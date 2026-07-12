@@ -39,9 +39,9 @@
 
 /* Button Variants */
 .ds-btn--solid {
-  background-color: var(--color-brand-500);
-  color: white;
-  border-color: var(--color-brand-500);
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF;
+  border-color: var(--color-brand-primary);
 }
 
 .ds-btn--solid:hover:not(:disabled) {
@@ -371,6 +371,89 @@
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+}
+
+/* Card Variants */
+.ds-card--standard {
+  box-shadow: var(--shadow-e1);
+}
+
+.ds-card--feature {
+  border-color: var(--border-brand);
+  box-shadow: var(--shadow-e3);
+}
+
+.ds-card--feature .ds-card__header {
+  background-color: var(--surface-brand-subtle);
+}
+
+.ds-card--project,
+.ds-card--portfolio {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-card--project .ds-card__media,
+.ds-card--portfolio .ds-card__media,
+.ds-card--blog .ds-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+.ds-card--project .ds-card__body,
+.ds-card--portfolio .ds-card__body,
+.ds-card--blog .ds-card__body {
+  flex: 1;
+}
+
+.ds-card--project .ds-card__footer,
+.ds-card--portfolio .ds-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ds-card--portfolio {
+  border-color: color-mix(in oklab, var(--border-brand), var(--border-default) 55%);
+}
+
+.ds-card--blog .ds-card__description {
+  line-height: var(--line-height-relaxed);
+}
+
+.ds-card--testimonial .ds-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.ds-card__quote {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.ds-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.ds-card--media {
+  position: relative;
+}
+
+.ds-card--media .ds-card__media {
+  aspect-ratio: 4 / 3;
+}
+
+.ds-card--media .ds-card__body {
+  background-color: var(--surface-primary);
 }
 
 /* Interactive Card */
@@ -428,7 +511,7 @@
 .ds-input:focus {
   outline: none;
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(45, 106, 187, 0.1);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--focus-ring-color), transparent 85%);
 }
 
 .ds-input:disabled,

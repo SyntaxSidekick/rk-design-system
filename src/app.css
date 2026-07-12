@@ -361,7 +361,7 @@
 .docs-search__input:focus {
   outline: none;
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(45, 106, 187, 0.1);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--focus-ring-color), transparent 85%);
 }
 
 .ds-sidebar__title {
@@ -380,9 +380,10 @@
 
 @media (max-width: 1024px) {
   .docs-sidebar {
+    width: min(16rem, 85vw);
     position: fixed;
-    left: -16rem;
-    z-index: var(--z-fixed);
+    left: calc(min(16rem, 85vw) * -1);
+    z-index: calc(var(--z-fixed) + 1);
     transition: left var(--duration-medium) var(--ease-out);
   }
   
