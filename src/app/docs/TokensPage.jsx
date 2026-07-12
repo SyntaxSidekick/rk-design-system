@@ -109,26 +109,6 @@ export function TokensPage() {
         <p style={{ marginBottom: 'var(--space-5)', color: 'var(--text-secondary)' }}>
           Primary brand colors anchored on Kilani-blue (#142D58).
         </p>
-        <div className="ds-card" style={{ marginBottom: 'var(--space-6)' }}>
-          <div className="ds-card__body" style={{ display: 'grid', gridTemplateColumns: 'minmax(6rem, 10rem) 1fr', gap: 'var(--space-5)', alignItems: 'center' }}>
-            <div
-              style={{
-                backgroundColor: 'var(--color-kilani-blue)',
-                borderRadius: 'var(--radius-lg)',
-                minHeight: '6rem',
-                border: 'var(--border-width-1) solid var(--border-default)'
-              }}
-            />
-            <div>
-              <h4 style={{ marginBottom: 'var(--space-2)' }}>Kilani-blue</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <code>--color-kilani-blue: #142D58</code>
-                <code>--color-brand-primary: var(--color-kilani-blue)</code>
-                <code>--color-brand-500: var(--color-kilani-blue)</code>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="docs-color-grid">
           {brandColors.map((color) => (
             <div key={color.name} className="docs-color-swatch">
